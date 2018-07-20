@@ -1,0 +1,15 @@
+﻿@model Stocksymbol
+
+@{ 
+    ViewBag.Title = Model.Name;
+}
+
+<h1>@Model.Name</h1>
+<div>
+    Id: @Model.Id
+</div>
+<div>
+    Stock: @Model.Stock
+</div>
+
+<a asp-action="Index" asp-controller="Home">Home</a>

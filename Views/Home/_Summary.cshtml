@@ -1,0 +1,12 @@
+﻿@model Stocksymbol
+
+<section>
+    <h3>@Model.Name</h3>
+    <div>
+        Stock: @Model.Stock
+    </div>
+    <div>
+        <a asp-action="Details" asp-route-id="@Model.Id">More</a>
+        <a asp-page="/Stocksymbols/Edit" asp-route-id="@Model.Id">Edit</a>
+    </div>
+</section>

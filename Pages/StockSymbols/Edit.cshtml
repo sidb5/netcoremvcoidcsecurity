@@ -1,0 +1,26 @@
+﻿@page "{id}"
+@using StockAnalysis.Pages.Stocksymbols
+
+@model EditModel
+
+<h1>Edit @Model.Stocksymbol.Name</h1>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Stocksymbol.Id" />
+
+    <div>
+        <label asp-for="Stocksymbol.Name"></label>
+        <input asp-for="Stocksymbol.Name" />
+        <span asp-validation-for="Stocksymbol.Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="Stocksymbol.Stock"></label>
+        <select asp-for="Stocksymbol.Stock"
+                asp-items="@Html.GetEnumSelectList<StockType>()"></select>
+        <span asp-validation-for="Stocksymbol.Stock"></span>
+    </div>
+
+    <input type="submit" name="save" value="Save" />
+</form>

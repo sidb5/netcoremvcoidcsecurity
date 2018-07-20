@@ -1,0 +1,16 @@
+﻿@model StockAnalysis.ViewModels.HomeIndexViewModel
+
+@{
+    ViewBag.Title = "Home page";
+}
+
+<h1>All Stock Symbols</h1>
+
+@foreach (var stocksymbol in Model.Stocksymbols)
+{
+    @Html.Partial("_Summary", stocksymbol)
+}
+
+<div>
+    <a asp-action="Create">Add Stock Symbol</a>
+</div>
